@@ -1,0 +1,14 @@
+@h1-color: red;
+@h2-color: darken(@h1-color, 10%);
+@h1-size: 24px;
+@h2-size: @h1-size - 4px;
+
+h1 {
+    font-size: @h1-size;
+    color: @h1-color;
+}
+
+h2 {
+    font-size: @h2-size;
+    color: @h2-color;
+}

@@ -1,0 +1,1 @@
+/* copyright www */(function(){var n,o;n=function(){function n(n){this.name=n}return n.prototype.hello=function(){return console.log("hello, "+this.name)},n}(),o=new n("hoge"),o.hello()}).call(this);
