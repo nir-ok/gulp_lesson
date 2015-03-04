@@ -5,6 +5,7 @@ var pkg     = require('./package.json');
 var coffee  = require('gulp-coffee');
 var uglify  = require('gulp-uglify');
 var lessc   = require('gulp-less');
+var jade    = require('gulp-jade');
 var plumber = require('gulp-plumber');
 var header  = require('gulp-header');
 var server  = require('gulp-webserver');
@@ -32,6 +33,13 @@ gulp.task('less', function() {
         .pipe(gulp.dest('./public/css'));
 });
 
+// jade -> html
+gulp.task('jade', function() {
+    gulp.src('./src/jade/*.jade')
+        .pipe(jade())
+        .pipe(gulp.dest('./public'))
+});
+
 // watch
 gulp.task('watch', function() {
     gulp.watch('./src/coffee/*.coffee', ['js']);
@@ -53,4 +61,4 @@ gulp.task('webserver', function() {
 });
 */
 
-gulp.task('default', ['html', 'js', 'less', 'watch']);
+gulp.task('default', ['html', 'js', 'less', 'jade', 'watch']);
